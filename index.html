@@ -1,5 +1,5 @@
 <html>
-        <style>
+    <style>
         body{
             height: 90vh;
             display:flex;
@@ -42,14 +42,13 @@
 
 
     function rel(){
-        location.reload();
+        // location.reload();
     }
     
         
     function titil() {
-        setInterval(closeWin, 4000);
-        setInterval(openWin, 2000);
-        
+        setInterval(closeWin, 2500);
+        openWin();
     }
        
     </script>
@@ -63,7 +62,7 @@
         
 
         function start() {
-            script.innerHTML = "setInterval(titil, 2000);setTimeout(rel, 20000);";
+            script.innerHTML = "setInterval(titil, 3000);";
         }
         
         function stop() {
@@ -72,10 +71,6 @@
         }
     </script>
 </html>
-
-
-
-
 
 
 
