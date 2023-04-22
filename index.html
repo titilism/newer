@@ -1,0 +1,25 @@
+<html>
+    <body>
+          <button onclick="openWin()">Open "myWindow"</button>
+    <button onclick="closeWin()">Close "myWindow"</button>
+    </body>
+    <script>
+    var fruits =
+       ["Banana", "Orange", "Apple", "Mango", "Pineapple", "Watermelon", "Kiwi", "Papaya", "Grapes", "Strawberry", "Blueberry", "Raspberry", "Blackberry", "Cherry", "Peach", "Plum", "Apricot", "Pear", "Lemon", "Lime", "Grapefruit", "Tangerine", "Clementine", "Mandarin Orange", "Passionfruit", "Dragonfruit", "Starfruit", "Guava", "Lychee", "Mangoosteen", "Pomegranate", "Fig", "Date Fruit", "Coconut Fruit Meat (Raw)", "Avocado (Raw)", "Jackfruit (Raw)", "Durian (Raw)", "Persimmon (Raw)", "Kumquat (Raw)", "Cantaloupe Melon (Raw)", "Honeydew Melon (Raw)", "Watermelon (Raw)", 	"Cherimoya (Raw)", 	"Feijoa (Raw)", 	"Gooseberries (Raw)", 	"Elderberries (Raw)", 	"Black Currants (Raw)", 	"Red Currants (Raw)", 	"White Currants (Raw)", 	"Goji Berries (Dried)", 	"Acai Berries (Freeze-Dried Powder)", 	"Cranberries (Dried Sweetened)", 	"Raisins (Seedless)", 	"Sultanas (Seedless Golden Raisins)", 	"Prunes (Dried Plums)"];
+
+
+    
+    let myWindow;
+    
+    function openWin() {
+        let random = Math.floor(Math.random()*fruits.length);
+        let link = 'https://www.bing.com/search?q=' + fruits[random];
+        myWindow = window.open(link, "", "width=300,height=200");
+    }
+    
+    function closeWin() {
+      myWindow.close();
+    }
+    </script>
+    
+</html>
