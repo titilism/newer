@@ -17,8 +17,6 @@
         }
     </style>
     <body>
-<!--         <button onclick="openWin()">Open "myWindow"</button>
-        <button onclick="closeWin()">Close "myWindow"</button> -->
         
         <button class="btn" onclick="start()">Start</button>
         <button class="btn" onclick="stop()">Stop</button>
@@ -44,14 +42,14 @@
 
 
     function rel(){
-        // location.reload();
+        location.reload();
     }
     
         
-    function titil() {
-        setInterval(closeWin, 2500);
-        openWin();
-    }
+//     function titil() {
+//         setInterval(closeWin, 2500);
+//         openWin();
+//     }
        
     </script>
     
@@ -64,7 +62,7 @@
         
 
         function start() {
-            script.innerHTML = "setInterval(titil, 3000);";
+            script.innerHTML = "setInterval(openWin, 2000);setInterval(closeWin, 4000);setTimeout(rel, 30000);";
         }
         
         function stop() {
@@ -91,8 +89,7 @@
 
 <!-- <html>
     <body>
-        <button onclick="openWin()">Open "myWindow"</button>
-        <button onclick="closeWin()">Close "myWindow"</button>
+        
         
         <button class="btn" onclick="start()">Start</button>
         <button class="btn" onclick="stop()">Stop</button>
