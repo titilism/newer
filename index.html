@@ -12,6 +12,7 @@
     let myWindow;
     
     function openWin() {
+        
         let random = Math.floor(Math.random()*fruits.length);
         let link = 'https://www.bing.com/search?q=' + fruits[random];
         myWindow = window.open(link, "", "width=300,height=200");
