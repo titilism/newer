@@ -1,7 +1,10 @@
 <html>
     <body>
-          <button onclick="openWin()">Open "myWindow"</button>
-    <button onclick="closeWin()">Close "myWindow"</button>
+<!--         <button onclick="openWin()">Open "myWindow"</button>
+        <button onclick="closeWin()">Close "myWindow"</button> -->
+        
+        <button class="btn" onclick="start()">Start</button>
+        <button class="btn" onclick="stop()">Stop</button>
     </body>
     <script>
     var fruits =
@@ -12,15 +15,32 @@
     let myWindow;
     
     function openWin() {
-        
         let random = Math.floor(Math.random()*fruits.length);
         let link = 'https://www.bing.com/search?q=' + fruits[random];
-        myWindow = window.open(link, "", "width=300,height=200");
+        myWindow = window.open(link);
     }
-    
     function closeWin() {
-      myWindow.close();
+        myWindow.close();
     }
+
+       
     </script>
     
+    <script id='script'></script>
+    
+    <script>
+        let script = document.getElementById('script');
+        let toggleBtn = document.getElementById('toggle');
+        
+        
+
+        function start() {
+            script.innerHTML = "setInterval(openWin, 2000); setInterval(closeWin, 4000);";
+        }
+        
+        function stop() {
+            location.reload();
+            // script.innerHTML = "";
+        }
+    </script>
 </html>
