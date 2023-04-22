@@ -17,6 +17,84 @@
     function openWin() {
         let random = Math.floor(Math.random()*fruits.length);
         let link = 'https://www.bing.com/search?q=' + fruits[random];
+        myWindow = window.open(link, "_blank");
+    }
+    function closeWin() {
+        myWindow.close();
+    }
+
+
+    function rel(){
+        location.reload();
+    }
+    
+        
+    function titil() {
+        setInterval(closeWin, 4000);
+        setInterval(openWin, 2000);
+        
+    }
+       
+    </script>
+    
+    <script id='script'></script>
+    
+    <script>
+        let script = document.getElementById('script');
+        let toggleBtn = document.getElementById('toggle');
+        
+        
+
+        function start() {
+            script.innerHTML = "setInterval(titil, 2000);setTimeout(rel, 20000);";
+        }
+        
+        function stop() {
+            location.reload();
+            // script.innerHTML = "";
+        }
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <html>
+    <body>
+        <button onclick="openWin()">Open "myWindow"</button>
+        <button onclick="closeWin()">Close "myWindow"</button>
+        
+        <button class="btn" onclick="start()">Start</button>
+        <button class="btn" onclick="stop()">Stop</button>
+    </body>
+    <script>
+    var fruits =
+       ["Banana", "Orange", "Apple", "Mango", "Pineapple", "Watermelon", "Kiwi", "Papaya", "Grapes", "Strawberry", "Blueberry", "Raspberry", "Blackberry", "Cherry", "Peach", "Plum", "Apricot", "Pear", "Lemon", "Lime", "Grapefruit", "Tangerine", "Clementine", "Mandarin Orange", "Passionfruit", "Dragonfruit", "Starfruit", "Guava", "Lychee", "Mangoosteen", "Pomegranate", "Fig", "Date Fruit", "Coconut Fruit Meat (Raw)", "Avocado (Raw)", "Jackfruit (Raw)", "Durian (Raw)", "Persimmon (Raw)", "Kumquat (Raw)", "Cantaloupe Melon (Raw)", "Honeydew Melon (Raw)", "Watermelon (Raw)", 	"Cherimoya (Raw)", 	"Feijoa (Raw)", 	"Gooseberries (Raw)", 	"Elderberries (Raw)", 	"Black Currants (Raw)", 	"Red Currants (Raw)", 	"White Currants (Raw)", 	"Goji Berries (Dried)", 	"Acai Berries (Freeze-Dried Powder)", 	"Cranberries (Dried Sweetened)", 	"Raisins (Seedless)", 	"Sultanas (Seedless Golden Raisins)", 	"Prunes (Dried Plums)"];
+
+
+    
+    let myWindow;
+    
+    function openWin() {
+        let random = Math.floor(Math.random()*fruits.length);
+        let link = 'https://www.bing.com/search?q=' + fruits[random];
         myWindow = window.open(link);
     }
     function closeWin() {
@@ -44,3 +122,4 @@
         }
     </script>
 </html>
+ -->
