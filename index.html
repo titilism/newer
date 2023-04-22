@@ -33,7 +33,9 @@
     
     function openWin() {
         let random = Math.floor(Math.random()*fruits.length);
-        let link = 'https://www.bing.com/search?q=' + fruits[random];
+        let randoma = Math.floor(Math.random()*fruits.length);
+        let randomb = Math.floor(Math.random()*fruits.length);
+        let link = 'https://www.bing.com/search?q=' + fruits[random] + ' ' + fruits[randoma] + ' ' + fruits[randomb];
         myWindow = window.open(link, "_blank");
     }
     function closeWin() {
@@ -71,7 +73,6 @@
         }
     </script>
 </html>
-
 
 
 
