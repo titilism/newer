@@ -14,12 +14,16 @@
             font-size: 4em;
             margin: .5em;
             font-weight: 1em;
+            text-align: center;
         }
     </style>
     <body>
-        
+<!--         <button onclick="openWin()">Open "myWindow"</button>
+        <button onclick="closeWin()">Close "myWindow"</button> -->
+        <!-- <input class="btn" id="intval" type="number" placeholder="2" value=""> -->
         <button class="btn" onclick="start()">Start</button>
         <button class="btn" onclick="stop()">Stop</button>
+        <!-- <button class="btn" onclick="closeTabs()">Close Tabs</button> -->
     </body>
     <script>
     var fruits =
@@ -27,109 +31,75 @@
 
 
     
-    let myWindow;
+    let myWindow = [];
+    let win;
+    let w;
     
     function openWin() {
         let random = Math.floor(Math.random()*fruits.length);
         let randoma = Math.floor(Math.random()*fruits.length);
         let randomb = Math.floor(Math.random()*fruits.length);
         let link = 'https://www.bing.com/search?q=' + fruits[random] + ' ' + fruits[randoma] + ' ' + fruits[randomb];
-        myWindow = window.open(link, "_blank");
+        win = window.open(link, "_blank");
+        myWindow.push(win);
     }
     function closeWin() {
         myWindow.close();
     }
 
+    
+    // let tinterval = document.getElementById('intval');
+        // for (let i = 0; i < 3; i++) {
+        //     openWin();
+        // }
 
-    function rel(){
-        location.reload();
-    }
+        
+
+
+
+    // function rel(){
+    //     location.reload();
+    // }
     
         
-//     function titil() {
-//         setInterval(closeWin, 2500);
-//         openWin();
-//     }
+    // function titil() {
+    //     setInterval(closeWin, 2500);
+    //     openWin();
+    // }
        
     </script>
     
     <script id='script'></script>
+    <script id='ctb'></script>
     
     <script>
         let script = document.getElementById('script');
         let toggleBtn = document.getElementById('toggle');
+        let ctabs = document.getElementById('ctb');
         
         
+        
+         
 
         function start() {
-            script.innerHTML = "setInterval(openWin, 2000);setInterval(closeWin, 4000);setTimeout(rel, 30000);";
+            script.innerHTML = `
+            setInterval(openWin, 2500);
+            setTimeout(closeTabs, 25000);
+            setTimeout(stop, 25500);`;
         }
         
         function stop() {
+
+            // script.innerHTML = '';
+
             location.reload();
             // script.innerHTML = "";
         }
-    </script>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <html>
-    <body>
-        
-        
-        <button class="btn" onclick="start()">Start</button>
-        <button class="btn" onclick="stop()">Stop</button>
-    </body>
-    <script>
-    var fruits =
-       ["Banana", "Orange", "Apple", "Mango", "Pineapple", "Watermelon", "Kiwi", "Papaya", "Grapes", "Strawberry", "Blueberry", "Raspberry", "Blackberry", "Cherry", "Peach", "Plum", "Apricot", "Pear", "Lemon", "Lime", "Grapefruit", "Tangerine", "Clementine", "Mandarin Orange", "Passionfruit", "Dragonfruit", "Starfruit", "Guava", "Lychee", "Mangoosteen", "Pomegranate", "Fig", "Date Fruit", "Coconut Fruit Meat (Raw)", "Avocado (Raw)", "Jackfruit (Raw)", "Durian (Raw)", "Persimmon (Raw)", "Kumquat (Raw)", "Cantaloupe Melon (Raw)", "Honeydew Melon (Raw)", "Watermelon (Raw)", 	"Cherimoya (Raw)", 	"Feijoa (Raw)", 	"Gooseberries (Raw)", 	"Elderberries (Raw)", 	"Black Currants (Raw)", 	"Red Currants (Raw)", 	"White Currants (Raw)", 	"Goji Berries (Dried)", 	"Acai Berries (Freeze-Dried Powder)", 	"Cranberries (Dried Sweetened)", 	"Raisins (Seedless)", 	"Sultanas (Seedless Golden Raisins)", 	"Prunes (Dried Plums)"];
-
-
-    
-    let myWindow;
-    
-    function openWin() {
-        let random = Math.floor(Math.random()*fruits.length);
-        let link = 'https://www.bing.com/search?q=' + fruits[random];
-        myWindow = window.open(link);
-    }
-    function closeWin() {
-        myWindow.close();
-    }
-
-       
-    </script>
-    
-    <script id='script'></script>
-    
-    <script>
-        let script = document.getElementById('script');
-        let toggleBtn = document.getElementById('toggle');
-        
-        
-
-        function start() {
-            script.innerHTML = "setInterval(openWin, 2000); setInterval(closeWin, 3000);";
+        function closeTabs() {
+            ctabs.innerHTML = `for (let i = 0; i < myWindow.length; i++) {
+                myWindow[i].close();
+            }`;
         }
         
-        function stop() {
-            location.reload();
-            // script.innerHTML = "";
-        }
     </script>
 </html>
- -->
