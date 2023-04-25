@@ -18,14 +18,15 @@
         }
     </style>
     <body>
-<!--         <button onclick="openWin()">Open "myWindow"</button>
-        <button onclick="closeWin()">Close "myWindow"</button> -->
-        <!-- <input class="btn" id="intval" type="number" placeholder="2" value=""> -->
+<!--         <button onclick="openWin()">Open "myWindow"</button> -->
+<!--         <button onclick="closeWin()">Close "myWindow"</button> -->
+        <input class="btn" id="intval" type="number" placeholder="Enter seconds" value="" min='0'>
         <button class="btn" onclick="start()">Start</button>
         <button class="btn" onclick="stop()">Stop</button>
-        <!-- <button class="btn" onclick="closeTabs()">Close Tabs</button> -->
+<!--         <button class="btn" onclick="closeTabs()">Close Tabs</button> -->
+<!--         <a href="https://titilism.github.io/newer/" id= ></a> -->
     </body>
-    <script>
+   <script>
     var fruits =
        ["Banana", "Orange", "Apple", "Mango", "Pineapple", "Watermelon", "Kiwi", "Papaya", "Grapes", "Strawberry", "Blueberry", "Raspberry", "Blackberry", "Cherry", "Peach", "Plum", "Apricot", "Pear", "Lemon", "Lime", "Grapefruit", "Tangerine", "Clementine", "Mandarin Orange", "Passionfruit", "Dragonfruit", "Starfruit", "Guava", "Lychee", "Mangoosteen", "Pomegranate", "Fig", "Date Fruit", "Coconut Fruit Meat (Raw)", "Avocado (Raw)", "Jackfruit (Raw)", "Durian (Raw)", "Persimmon (Raw)", "Kumquat (Raw)", "Cantaloupe Melon (Raw)", "Honeydew Melon (Raw)", "Watermelon (Raw)", 	"Cherimoya (Raw)", 	"Feijoa (Raw)", 	"Gooseberries (Raw)", 	"Elderberries (Raw)", 	"Black Currants (Raw)", 	"Red Currants (Raw)", 	"White Currants (Raw)", 	"Goji Berries (Dried)", 	"Acai Berries (Freeze-Dried Powder)", 	"Cranberries (Dried Sweetened)", 	"Raisins (Seedless)", 	"Sultanas (Seedless Golden Raisins)", 	"Prunes (Dried Plums)"];
 
@@ -66,6 +67,11 @@
     //     setInterval(closeWin, 2500);
     //     openWin();
     // }
+
+
+       
+       
+
        
     </script>
     
@@ -77,23 +83,30 @@
         let toggleBtn = document.getElementById('toggle');
         let ctabs = document.getElementById('ctb');
         
+
+
         
         
          
 
         function start() {
             script.innerHTML = `
-            setInterval(openWin, 2500);
-            setTimeout(closeTabs, 25000);
-            setTimeout(stop, 25500);`;
+            let intval = document.getElementById('intval').value;
+            let sec = 2500;
+            if (intval != '') {
+            sec = intval * 1000;
+            }
+            setInterval(openWin, sec);
+            setTimeout(closeTabs, sec * 10);
+            setTimeout(stop, sec * 10 +500);
+            `;
         }
         
         function stop() {
 
-            // script.innerHTML = '';
+//             script.innerHTML = '';
 
             location.reload();
-            // script.innerHTML = "";
         }
         function closeTabs() {
             ctabs.innerHTML = `for (let i = 0; i < myWindow.length; i++) {
@@ -102,4 +115,11 @@
         }
         
     </script>
+<!--     <script>
+        function goBack() {
+            document.location.href = 'https://titilism.github.io/newer/';
+        }
+        document.onload(goBack());
+        
+    </script> -->
 </html>
