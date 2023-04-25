@@ -97,13 +97,14 @@
         function start() {
             script.innerHTML = `
             let intval = document.getElementById('intval').value;
-            let sec = 2500;
+            let sec = 2000;
             if (intval != '') {
             sec = intval * 1000;
             }
+            let halfSec = sec / 2;
             setInterval(openWin, sec);
-            setTimeout(closeTabs, sec * 10);
-            setTimeout(stop, sec * 10 +500);
+            setTimeout(closeTabs, sec * 10 + halfSec);
+            setTimeout(stop, sec * 10 + halfSec + 100);
             `;
         }
         
