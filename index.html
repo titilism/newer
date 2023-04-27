@@ -5,7 +5,7 @@
     <link rel="icon" type="image/x-icon" href="https://th.bing.com/th/id/R.0bfc2c6b2a27ae00a91418ad5232147f?rik=oXgHNdw0ruN7iA&amp;riu=http%3a%2f%2fwww.possum.co.uk%2fwp-content%2fuploads%2f2017%2f11%2fButterfly-large-favicon.png&amp;ehk=K7JrXiSuDzDw1xARKQgoA2mVJCHZvQeYSCsD51m46aM%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0">
     <title>🌼तितिल - Automated Search</title>
     <style>
-      body{
+        body{
             height: 90vh;
             display:flex;
             justify-content: center;
@@ -14,17 +14,19 @@
             background: black;
         }
         .btn{
-            height: 5em;
-            width: 9em;
+            height: 4em;
+            width: 8em;
             padding: 0;
-            font-size: 2em;
+            font-size: 1.5em;
             margin: .5em;
+            padding:1em;
             font-weight: bolder;
             text-align: center;
             border-radius: 20px;
             font-family: sans-serif;
             color: #bbbbbb;
             background: #0b3634;
+            box-sizing: border-box;
         }
         .btn:active{
             background: #12302feb;
@@ -34,7 +36,8 @@
     <body>
 <!--         <button onclick="openWin()">Open "myWindow"</button> -->
 <!--         <button onclick="closeWin()">Close "myWindow"</button> -->
-        <input class="btn" id="intval" type="number" placeholder="Enter seconds" value="" min='0'>
+        <input class="btn" id="intval" type="number" placeholder="Enter sec" value="" min='0'>
+        <input class="btn" id="tabs" type="number" placeholder="Enter Tabs" value="" min='0'>
         <button class="btn" onclick="start()">Start</button>
         <button class="btn" onclick="stop()">Stop and Close</button>
 <!--         <button class="btn" onclick="closeTabs()">Close Tabs</button> -->
@@ -106,14 +109,22 @@
         function start() {
             script.innerHTML = `
             let intval = document.getElementById('intval').value;
+            let tabs = document.getElementById('tabs').value;
             let sec = 2000;
+            let tabsCount = 10;
+            
             if (intval != '') {
             sec = intval * 1000;
-            }
+            };
+            
+            if (tabs != '') {
+            tabsCount = tabs;
+            };
+            
             let halfSec = sec / 2;
             setInterval(openWin, sec);
-            setTimeout(closeTabs, sec * 10 + halfSec);
-            setTimeout(stop, sec * 10 + halfSec + 100);
+            setTimeout(closeTabs, sec * tabsCount + halfSec);
+            setTimeout(stop, sec * tabsCount + halfSec + 100);
             `;
         }
         
