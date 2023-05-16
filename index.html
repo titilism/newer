@@ -32,12 +32,30 @@
             background: #12302feb;
             
         }
+
+        span{
+            color: white;
+        }
+        #seconds, #tabs{
+            height: 15px;
+            width: 190px;
+            cursor: pointer;
+        }
+
+        p{
+            color: white;
+        }
     </style>
     <body>
 <!--         <button onclick="openWin()">Open "myWindow"</button> -->
 <!--         <button onclick="closeWin()">Close "myWindow"</button> -->
-        <input class="btn" id="intval" type="number" placeholder="Enter sec" value="" min='0'>
-        <input class="btn" id="tabs" type="number" placeholder="Enter Tabs" value="" min='0'>
+        <!-- <input class="btn" id="intval" type="number" placeholder="Enter sec" value="" min='0'> -->
+
+        <input type="range" name="range" id="seconds" min="1" max="10" value="1"><p>Seconds:&ThickSpace;<span id="seconds-el">1</span></p>
+        <input type="range" name="range" id="tabs" min="5" max="50" value="5"><p>Tabs:&ThickSpace;<span id="tabs-el">5</span></p>
+
+        <!-- <input class="btn" id="tabs" type="number" placeholder="Enter Tabs" value="" min='0'> -->
+
         <button class="btn" onclick="start()">Start</button>
         <button class="btn" onclick="stop()">Stop and Close</button>
 <!--         <button class="btn" onclick="closeTabs()">Close Tabs</button> -->
@@ -52,6 +70,28 @@
     let myWindow = [];
     let win;
     let w;
+    let secondsBar = document.getElementById('seconds');
+    let tabsBar = document.getElementById('tabs');
+    let secondsEl = document.getElementById('seconds-el');
+    let tabsEl = document.getElementById('tabs-el');
+
+        // secondsBar.addEventListener('click', function () {
+        //     secondsEl.innerHTML = secondsBar.value;
+        //     tabsEl.innerHTML = tabsBar.value;
+        // })
+        // tabsBar.addEventListener('click', function () {
+
+        // })
+
+
+        setInterval(() => {
+            secondsEl.innerHTML = secondsBar.value;
+            tabsEl.innerHTML = tabsBar.value;
+        }, 50);
+
+
+
+
     
     function openWin() {
         let random = Math.floor(Math.random()*fruits.length);
@@ -99,17 +139,13 @@
         let script = document.getElementById('script');
         let toggleBtn = document.getElementById('toggle');
         let ctabs = document.getElementById('ctb');
-        
 
-
-        
-        
          
 
         function start() {
             script.innerHTML = `
-            let intval = document.getElementById('intval').value;
-            let tabs = document.getElementById('tabs').value;
+            let intval = secondsBar.value;
+            let tabs = tabsBar.value;
             let sec = 2000;
             let tabsCount = 10;
             
@@ -141,6 +177,7 @@
             setTimeout(location.reload(), 800);
         }
         
+
     </script>
 <!--     <script>
         function goBack() {
