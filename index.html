@@ -50,9 +50,9 @@
 <!--         <button onclick="openWin()">Open "myWindow"</button> -->
 <!--         <button onclick="closeWin()">Close "myWindow"</button> -->
         <!-- <input class="btn" id="intval" type="number" placeholder="Enter sec" value="" min='0'> -->
-          <p>Seconds:&ThickSpace;<span id="seconds-el">1</span></p>
+          <p>Seconds:&ThickSpace;<span id="seconds-el"></span></p>
         <input type="range" name="range" id="seconds" min="0.5" max="10" value="0.5">
-         <p>Tabs:&ThickSpace;<span id="tabs-el">5</span></p>
+         <p>Tabs:&ThickSpace;<span id="tabs-el"></span></p>
         <input type="range" name="range" id="tabs" min="5" max="50" value="5">
 <br>
         <!-- <input class="btn" id="tabs" type="number" placeholder="Enter Tabs" value="" min='0'> -->
@@ -88,7 +88,7 @@
         setInterval(() => {
             secondsEl.innerHTML = secondsBar.value;
             tabsEl.innerHTML = tabsBar.value;
-        }, 50);
+        }, 100);
 
 
 
